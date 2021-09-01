@@ -63,17 +63,19 @@ export default function Edit() {
   };
 
   // This function will handle the submission.
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
 
     // This will send a post request to update the data in the database.
-    axios.patch(`${apiURL}records/` + id, newEditedperson);
+    await axios.patch(`${apiURL}records/` + id, newEditedperson);
     console.log(whatchanged);
     let message = Object.values(whatchanged).join(" ");
     alertify.success(message, 1);
-    setTimeout(() => {
-      history.push("/");
-    }, 100);
+    history.push("/");
+    //async tanımlayıp axiosu böyle çağırınca sorun düzeldi
+    // setTimeout(() => {
+    //   history.push("/");
+    // }, 100);
   };
 
   return (

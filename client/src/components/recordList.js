@@ -38,8 +38,20 @@ export default function RecordList() {
     border-color: red;
   `;
 
+  async function fetchData() {
+    await axios
+      .get(`${apiURL}records/`) //heroku kullanılmıyorsa ${localURL} kullan
+      .then((response) => {
+        setRecords(response.data);
+      })
+      .catch(function (error) {
+        console.log(error.message);
+      });
+  }
+
   const [records, setRecords] = useState([]);
   useEffect(() => {
+    //fetchData();
     axios
       .get(`${apiURL}records/`) //heroku kullanılmıyorsa ${localURL} kullan
       .then((response) => {
