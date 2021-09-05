@@ -1,87 +1,53 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "alertifyjs/build/css/alertify.css";
 
 import PuffLoader from "react-spinners/PuffLoader";
 import { css } from "@emotion/react";
 
-const Record = ({ record, deleteRecord }) => (
-  <tr>
-    <td>{record.person_name}</td>
-    <td>{record.person_position}</td>
-    <td>{record.person_level}</td>
-    <td>
-      <Link to={"/edit/" + record._id}>Edit</Link> |
-      <a
-        href="/"
-        onClick={() => {
-          deleteRecord(record._id);
-        }}
-      >
-        Delete
-      </a>
-    </td>
-  </tr>
-);
+//redux needs
+import { useDispatch } from "react-redux";
+import { getRecords, deleteRecord } from "../actions/records";
+import { useSelector } from "react-redux";
 
 export default function RecordList() {
-  //heroku deployment sonrası
-  const apiURL = "https://employeemern.herokuapp.com/";
-
-  //local backend
-  //const localURL = "http://localhost:5000/";
-
   const override = css`
     display: block;
     margin: 0 auto;
     border-color: red;
   `;
 
-  // async function fetchData() {
-  //   await axios
-  //     .get(`${apiURL}records/`) //heroku kullanılmıyorsa ${localURL} kullan
-  //     .then((response) => {
-  //       setRecords(response.data);
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error.message);
-  //     });
-  // }
-
-  const [records, setRecords] = useState([]);
+  const dispatch = useDispatch();
+  const records = useSelector((state) => state.records);
+  //const [records, setRecords] = useState([]); state globalde değişiyor burada state tanımına gerek yok
   useEffect(() => {
-    //fetchData();
-    axios
-      .get(`${apiURL}records/`) //heroku kullanılmıyorsa ${localURL} kullan
-      .then((response) => {
-        setRecords(response.data);
-      })
-      .catch(function (error) {
-        console.log(error.message);
-      });
-  }, []);
+    dispatch(getRecords());
+    // eski versiyondaki axios çağrıları kaldırıldı
+  }, [dispatch]);
 
-  const deleteRecord = (id) => {
-    axios
-      .delete(`${apiURL}records/` + id)
-      .then((response) => {
-        console.log(response.message);
-      })
-      .catch(function (error) {
-        console.log(error.message);
-      });
-  };
+  const Record = ({ record }) => (
+    <tr>
+      <td>{record.person_name}</td>
+      <td>{record.person_position}</td>
+      <td>{record.person_level}</td>
+      <td>
+        <Link to={"/edit/" + record._id}>Edit</Link> |
+        <a
+          href="/"
+          onClick={() => {
+            alert("delete basıldı");
+            dispatch(deleteRecord(record._id));
+          }}
+        >
+          Delete
+        </a>
+      </td>
+    </tr>
+  );
 
   const recordList = () => {
     return records.map((currentrecord) => {
-      return (
-        <Record
-          record={currentrecord}
-          deleteRecord={deleteRecord}
-          key={currentrecord._id}
-        />
-      );
+      return <Record record={currentrecord} key={currentrecord._id} />;
     });
   };
   return (

@@ -8,6 +8,9 @@ import axios from "axios";
 
 import { useParams, useHistory, Link } from "react-router-dom";
 
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+
 export default function Edit() {
   //heroku deployment sonrası
   const apiURL = "https://employeemern.herokuapp.com/";
@@ -15,6 +18,7 @@ export default function Edit() {
   //local backend
   // const localURL = "http://localhost:5000/";
 
+  const dispatch = useDispatch();
   //state data
   const [newEditedperson, setNeweditedperson] = useState({
     person_name: " ",
@@ -44,7 +48,7 @@ export default function Edit() {
       .catch(function (error) {
         console.log(" error message", error.message);
       });
-  }, [id]);
+  }, []);
 
   // These functions will update the state values.
   const onChangePersonName = (e) => {
