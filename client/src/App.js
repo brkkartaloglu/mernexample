@@ -9,17 +9,29 @@ import RecordList from "./components/recordList";
 
 // We import all the components we need in our app
 
+import useStyles from "./styles";
+import { Container, AppBar, Grow, Grid } from "@material-ui/core";
+
 export default function App() {
+  const classes = useStyles();
   return (
-    <div>
-      <Navi />
-      <Route exact path="/">
-        <RecordList />
-      </Route>
-      <Route path="/edit/:id" component={Edit} />
-      <Route path="/create">
-        <Create />
-      </Route>
-    </div>
+    <Container>
+      <AppBar className={classes.appBar} position="static" color="inherit">
+        <Navi />
+      </AppBar>
+      <Grow in>
+        <Container>
+          <Grid item xs={12} sm={12}>
+            <Route exact path="/">
+              <RecordList />
+            </Route>
+            <Route path="/edit/:id" component={Edit} />
+            <Route path="/create">
+              <Create />
+            </Route>
+          </Grid>
+        </Container>
+      </Grow>
+    </Container>
   );
 }

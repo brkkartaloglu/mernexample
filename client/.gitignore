@@ -11,6 +11,9 @@
 # production
 /build
 
+#components
+/src/components/sideBar.js
+
 # misc
 .DS_Store
 .env.local
