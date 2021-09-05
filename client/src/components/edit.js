@@ -68,7 +68,6 @@ export default function Edit() {
 
     // This will send a post request to update the data in the database.
     await axios.patch(`${apiURL}records/` + id, newEditedperson);
-    console.log(whatchanged);
     let message = Object.values(whatchanged).join(" ");
     alertify.success(message, 1);
     history.push("/");
