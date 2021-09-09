@@ -1,5 +1,16 @@
 ﻿# mernexample : This app created to fix the errors in the example at mongodb.com/languages/mern-stack-tutorial and to provide a cleaner example for learning MERN. In this branch, which is the first attempt of the MERN learning series, the basic react structure is used and the redux structure will be added in the second branch.
  
+ 
+ # Live 
+ Frontend is here : https://merndeneme.netlify.app/
+ Backend is here : https://employeemern.herokuapp.com/ 
+ Backend records: https://employeemern.herokuapp.com/records
+ 
+ # How to run simply:
+ After clone the repo;
+ Divide your vs terminal into to two part; in the first terminal locate client folder, in the second terminal locate server folder.
+ ### `npm start`
+ 
  # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
