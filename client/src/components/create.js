@@ -1,9 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 // This will require to npm install axios
-import axios from "axios";
 import { Link } from "react-router-dom";
-import alertify from "alertifyjs";
-import "alertifyjs/build/css/alertify.css";
 
 //redux needs
 import { useDispatch } from "react-redux";

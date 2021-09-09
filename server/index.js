@@ -19,14 +19,11 @@ app.use("/records", recordRoutes);
 
 //backend greeting page
 app.get("/", (req, res) => {
-  res.send("employee backende erisildi");
+  res.send("employee-redux backende erisildi");
 });
 
-//const CONNECTION_URL =
-("mongodb+srv://burak:deneme@cluster0.h3oan.mongodb.net/employees?retryWrites=true&w=majority");
-
 //process.env.PORT heroku deploymentı sonrası heroku üretecek
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 mongoose
   .connect(process.env.CONNECTION_URL, {

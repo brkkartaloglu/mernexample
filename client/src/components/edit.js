@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import alertify from "alertifyjs";
 import "alertifyjs/build/css/alertify.css";
 
-import axios from "axios";
 // You can get access to the history object's properties and the closest <Route>'s match via the withRouter
 // higher-order component. This makes it easier for us to edit our records.
 
@@ -10,16 +9,21 @@ import { useParams, useHistory, Link } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { editRecord, getRecords } from "../actions/records";
 
 export default function Edit() {
-  //heroku deployment sonrası
-  const apiURL = "https://employeemern.herokuapp.com/";
-
-  //local backend
-  // const localURL = "http://localhost:5000/";
-
   const dispatch = useDispatch();
+  const { id } = useParams();
+
   //state data
+
+  const record = useSelector((state) => {
+    if (Array.isArray(state.records)) {
+      return state.records.find((record) => record._id === id);
+    } else {
+      return state.records;
+    }
+  });
   const [newEditedperson, setNeweditedperson] = useState({
     person_name: " ",
     person_position: " ",
@@ -32,23 +36,15 @@ export default function Edit() {
   });
   // This will get the record based on the id from the database.
 
-  const { id } = useParams();
   let history = useHistory();
 
   useEffect(() => {
-    axios
-      .get(`${apiURL}records/` + id)
-      .then((response) => {
-        setNeweditedperson({
-          person_name: response.data.person_name,
-          person_position: response.data.person_position,
-          person_level: response.data.person_level,
-        });
-      })
-      .catch(function (error) {
-        console.log(" error message", error.message);
-      });
-  }, []);
+    if (record) {
+      setNeweditedperson(record);
+    } else {
+      dispatch(getRecords());
+    }
+  }, [dispatch, record]);
 
   // These functions will update the state values.
   const onChangePersonName = (e) => {
@@ -71,14 +67,11 @@ export default function Edit() {
     e.preventDefault();
 
     // This will send a post request to update the data in the database.
-    await axios.patch(`${apiURL}records/` + id, newEditedperson);
+
+    dispatch(editRecord(id, newEditedperson));
     let message = Object.values(whatchanged).join(" ");
-    alertify.success(message, 1);
+    alertify.success(message, 2);
     history.push("/");
-    //async tanımlayıp axiosu böyle çağırınca sorun düzeldi
-    // setTimeout(() => {
-    //   history.push("/");
-    // }, 100);
   };
 
   return (

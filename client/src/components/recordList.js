@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import "alertifyjs/build/css/alertify.css";
 
 import PuffLoader from "react-spinners/PuffLoader";
 import { css } from "@emotion/react";
+
+import moment from "moment";
+import { Button } from "reactstrap";
 
 //redux needs
 import { useDispatch } from "react-redux";
@@ -31,17 +33,19 @@ export default function RecordList() {
       <td>{record.person_position}</td>
       <td>{record.person_level}</td>
       <td>
-        <Link to={"/edit/" + record._id}>Edit</Link> |
-        <a
-          href="/"
+        <Button color="info">
+          <Link to={"/edit/" + record._id}>Edit</Link> |
+        </Button>
+        <Button
+          color="danger"
           onClick={() => {
-            alert("delete basıldı");
             dispatch(deleteRecord(record._id));
           }}
         >
           Delete
-        </a>
+        </Button>
       </td>
+      <td>{moment(record.createdAt).fromNow()}</td>
     </tr>
   );
 
@@ -56,13 +60,17 @@ export default function RecordList() {
         <h3>Record List</h3>
 
         {records.length !== 0 ? (
-          <table className="table table-striped" style={{ marginTop: 20 }}>
+          <table
+            className="table table-striped table-hover "
+            style={{ marginTop: 20 }}
+          >
             <thead>
               <tr>
                 <th>Name</th>
                 <th>Position</th>
                 <th>Level</th>
                 <th>Action</th>
+                <th>Created/Edited</th>
               </tr>
             </thead>
             <tbody>{recordList()}</tbody>
@@ -71,9 +79,9 @@ export default function RecordList() {
           <PuffLoader color={"#36D7B7"} css={override} size={150}></PuffLoader>
         )}
       </div>
-      <button>
+      <Button color="warning">
         <Link to={"/create/"}>Create</Link>
-      </button>
+      </Button>
     </>
   );
 }

@@ -31,7 +31,7 @@ export const getRecord = async (req, res) => {
 
 export const createRecord = async (req, res) => {
   const { person_name, person_position, person_level } = req.body;
-  console.log(person_name);
+
   const newRecordItem = new RecordItem({
     person_name,
     person_position,
