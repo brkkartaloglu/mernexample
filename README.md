@@ -1,8 +1,8 @@
-# mernexample: This app created to fix the errors in the example at mongodb.com/languages/mern-stack-tutorial and to provide a cleaner example for learning MERN. In this branch, which is the first attempt of the MERN learning series, the basic react structure is used and the redux structure will be added in the second branch.
+# mernexample: In this branch, redux structure added to first branch.
 
 # Live
 
-Full app is here : https://merndeneme.netlify.app/
+Full app is here : https://merndeneme-redux.netlify.app/
 Backend is here : https://employeemern-redux.herokuapp.com
 Backend records: https://employeemern-redux.herokuapp.com/records
 
@@ -25,3 +25,9 @@ To create build folder the code use:
 ### `npm run build`
 
 Then deploy the build folder.
+
+# Redux Dev Tools
+To see what changes happened in state, you can use redux dev tools extensions. 
+
+
+![Animation](https://user-images.githubusercontent.com/75986477/132658523-4c07fd5c-b99c-4bbc-8aa0-9b4b2c7a0483.gif)
