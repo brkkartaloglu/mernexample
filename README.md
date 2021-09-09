@@ -1,4 +1,4 @@
-# mernexample: This app created to fix the errors in the example at mongodb.com/languages/mern-stack-tutorial and to provide a cleaner example for learning MERN. In this branch, redux structure added to first branch.
+# mernexample: In this branch, redux structure added to first branch.
 
 # Live
 
