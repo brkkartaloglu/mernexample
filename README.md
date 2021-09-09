@@ -2,7 +2,7 @@
  
  
  # Live 
- Frontend is here : https://merndeneme.netlify.app/
+ Full app is here : https://merndeneme.netlify.app/
  Backend is here : https://employeemern.herokuapp.com/ 
  Backend records: https://employeemern.herokuapp.com/records
  
