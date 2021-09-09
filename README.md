@@ -1,4 +1,4 @@
-﻿# mernexample: This app created to fix the errors and improve the code in the example at mongodb.com/languages/mern-stack-tutorial. Also,provide a cleaner example for learning MERN with functional components rather than class component. In this branch, which is the first attempt of the MERN learning series, the basic react structure is used and the redux structure will be added in the second branch.
+﻿# mernexample: This app created to fix the errors and improve the code in the example at mongodb.com/languages/mern-stack-tutorial. Also,provide a cleaner example for learning MERN with functional components rather than class component. In this branch, which is the first attempt of the MERN learning series, the basic react structure is used and the redux structure will be added in the [second branch](https://github.com/brkkartaloglu/mernexample/tree/TRY_2).
  
  
  # Live 
