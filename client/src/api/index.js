@@ -1,6 +1,6 @@
 import axios from "axios";
 
-//heroku deployment sonrası
+//heroku deployment
 const apiURL = "https://employeemern-redux.herokuapp.com/records";
 
 //local backend

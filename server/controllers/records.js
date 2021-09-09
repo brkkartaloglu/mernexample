@@ -59,7 +59,6 @@ export const updateRecord = async (req, res) => {
   await RecordItem.findByIdAndUpdate(id, updatedRecord, { new: true });
 
   res.json(updatedRecord);
-  console.log("editte backend", updatedRecord);
 };
 
 export const deleteRecord = async (req, res) => {

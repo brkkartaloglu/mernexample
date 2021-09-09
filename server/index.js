@@ -1,5 +1,4 @@
 import express from "express";
-//import bodyParser from 'body-parser';
 import mongoose from "mongoose";
 import cors from "cors";
 
@@ -22,7 +21,6 @@ app.get("/", (req, res) => {
   res.send("employee-redux backende erisildi");
 });
 
-//process.env.PORT heroku deploymentı sonrası heroku üretecek
 const PORT = process.env.PORT || 5001;
 
 mongoose
@@ -36,5 +34,3 @@ mongoose
     )
   )
   .catch((error) => console.log(`${error} did not connect`));
-
-//mongoose.set('useFindAndModify', false);
