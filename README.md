@@ -1,4 +1,4 @@
-﻿# mernexample
+﻿# mernexample : This app created to fix the errors in the example at mongodb.com/languages/mern-stack-tutorial and to provide a cleaner example for learning MERN. In this branch, which is the first attempt of the MERN learning series, the basic react structure is used and the redux structure will be added in the second branch.
  
  # Getting Started with Create React App
 
