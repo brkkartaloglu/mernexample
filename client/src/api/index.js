@@ -1,12 +1,12 @@
 import axios from "axios";
 
 //heroku deployment
-//const apiURL = "https://employeemern-redux.herokuapp.com/records";
+const apiURL = "https://employeemernv2.herokuapp.com/";
 
 //local backend
 //const apiURL = "http://localhost:5001/records";
 
-const API = axios.create({ baseURL: "http://localhost:5001" });
+const API = axios.create({ baseURL: apiURL });
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem("profile")) {
