@@ -1,4 +1,9 @@
 export const GET_RECORDS = "GET_RECORDS";
+export const GET_RECORD = "GET_RECORD";
 export const CREATE_RECORD = "CREATE_RECORD";
 export const DELETE_RECORD = "DELETE_RECORD";
 export const EDIT_RECORD = "EDIT_RECORD";
+export const AUTH = "AUTH";
+export const LOGOUT = "LOGOUT";
+export const RANDOM = "RANDOM";
+export const FETCH_BY_SEARCH = "FETCH_BY_SEARCH";

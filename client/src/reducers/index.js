@@ -1,9 +1,11 @@
 import { combineReducers } from "redux";
 
 import records from "./records";
+import auth from "./auth";
 
 export default combineReducers({
   records,
+  auth,
 });
 
 //yada şu şekilde yapıp named import olarak index.js de kullanılır

@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 
 import recordRoutes from "./routes/record.js";
+import userRoutes from "./routes/user.js";
 
 import dotenv from "dotenv";
 //To read the .env-file you'll need to install something that will read that file, for instance the dotenv package
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 app.use("/records", recordRoutes);
+app.use("/user", userRoutes);
 
 //backend greeting page
 app.get("/", (req, res) => {
