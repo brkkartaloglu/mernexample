@@ -4,7 +4,7 @@
 
 Full app is here : https://merndenemev2.netlify.app/
 Backend is here : https://employeemernv2.herokuapp.com
-Backend records: https://employeemern-redux.herokuapp.com/records
+Backend records example: https://employeemernv2.herokuapp.com/records?page=1
 
 # How to run simply:
 
