@@ -1,4 +1,4 @@
-# mernexample: In this branch, some features (search, pagination, imageupload, recorddetails page) added to second branch.
+# mernexample: In this branch, some features (authorisation, searching, pagination, imageuploading, recorddetails page) added to second branch.
 
 # Live
 
