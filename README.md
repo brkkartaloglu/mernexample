@@ -1,9 +1,9 @@
-# mernexample: In this branch, redux structure added to first branch.
+# mernexample: In this branch, some features (search, pagination, imageupload, recorddetails page) added to second branch.
 
 # Live
 
-Full app is here : https://merndeneme-redux.netlify.app/
-Backend is here : https://employeemern-redux.herokuapp.com
+Full app is here : https://merndenemev2.netlify.app/
+Backend is here : https://employeemernv2.herokuapp.com
 Backend records: https://employeemern-redux.herokuapp.com/records
 
 # How to run simply:
