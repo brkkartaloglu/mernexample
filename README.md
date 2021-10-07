@@ -3,7 +3,7 @@
  
  # Live 
  
- ⚡ NEW : https://merndeneme-redux.netlify.app/ (Details are in [second branch](https://github.com/brkkartaloglu/mernexample/tree/TRY_2))
+ ⚡ NEW :https://merndenemev2.netlify.app  (Details are in [third branch](https://github.com/brkkartaloglu/mernexample/tree/TRY_3))
  
  Full app is here : https://merndeneme.netlify.app/
  Backend is here : https://employeemern.herokuapp.com/ 
