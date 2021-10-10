@@ -129,7 +129,7 @@ export default function Auth() {
             {isSignup ? "Sign Up" : "Sign In"}
           </Button>
           <GoogleLogin
-            clientId="409365727457-m2j38cb9o59s7dsquo8gb3i9p27jfes0.apps.googleusercontent.com"
+            clientId="your id comes here"
             render={(renderProps) => (
               <Button
                 className={classes.googleButton}
